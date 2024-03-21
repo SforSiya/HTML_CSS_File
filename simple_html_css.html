@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="styless.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>Simple page</title>
+</head>
+<body>
+    <div class="div">
+        <h1>Simple HTML page Example</h1>
+        <form >
+            <label>Compny Code:</label><br>
+            <input type="number" id="c_code" name="c_code"><br>
+            <label>Company:</label><br>
+            <input type="text" id="company" name="company"><br>
+            <label>Contact:</label><br>
+            <input type="text" id="Contact" name="Contact"><br>
+            <label>Country:</label><br>
+            <input type="text" id="Country" name="Country"><br><br>
+            <button onclick="addCompany(event)">Submit</button><br><br>
+            <table >
+                <thead>
+                    <th>Code</th>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>    
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function addCompany(event) {
+            event.preventDefault();
+            var c_code = document.getElementById("c_code").value;
+            var Company = document.getElementById("company").value;
+            var Contact = document.getElementById("Contact").value;
+            var Country = document.getElementById("Country").value;
+
+            var tbody = document.querySelector("tbody");
+
+            var tr = document.createElement('tr');
+
+            var td1 = tr.appendChild(document.createElement('td'));
+            var td2 = tr.appendChild(document.createElement('td'));
+            var td3 = tr.appendChild(document.createElement('td'));
+            var td4 = tr.appendChild(document.createElement('td'));
+
+            td1.innerHTML = c_code;
+            td2.innerHTML = Company;
+            td3.innerHTML = Contact;
+            td4.innerHTML = Country;
+
+            tbody.appendChild(tr);
+        }
+    </script>
+</body>
+</html>
